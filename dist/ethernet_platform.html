@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/992df593b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.js" integrity="sha512-bvV1V1YSjP1fbfKJjTlNmdnUO2XpsLYUdKwmz5UXBi5U+x40rx9JpA0ooQUMZfpz1MaaBC0ydNLoC6r0sitPUQ==" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/markdown.css">
+    <title>传感器实验室</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header-inner">
+      <div class="container">
+        <nav id="main-nav">
+          <img
+            src="img/creative_dark_transparent.png"
+            alt="sensor-lab"
+            id="logo"
+          />
+          <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="experiments.html">实验</a></li>
+            <li>
+              <a href="platform.html" class="current">平台</a>
+              <ul class="submenu">
+                <li><a href="platform.html">以太网平台</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">联系</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="document-main">
+      <div class="side-container">
+        <aside>
+          <div class="side-menu">
+            <h3>目录</h3>
+            <ul>
+              <li class="list-more"><a href="#" id="system" class="get-content">引脚信息</a>
+                <ul>
+                  <li>引脚分配图</li>
+                </ul>
+              </li>
+              <li class="list-more"><a href="#" id="configuration" class="get-content">系统配置</a>
+                <ul>
+                  <li>通过串口对系统进行配置</li>
+                </ul>
+              </li>
+              <li class="list-more"><a href="#" id="interact" class="get-content">系统交互</a>
+                <ul>
+                  <li>运行框图</li>
+                  <li>通过以太网与系统交互</li>
+                  <li>通过SD卡与系统交互</li>
+                  <li>事件处理，硬件操作和结果返回</li>
+                </ul>
+              </li>
+              <li class="list-more"><a href="#" id="interact" class="get-content">文档下载</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <section class="content markdown-body">
+        <div data-markdown id="main-content"></div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+      <div class="footer-content container">
+        <p>Copyright &copy; 2022. All Rights Reserved</p>
+        <div class="social">
+          <div class="fab"><i class="fa-brands fa-bilibili"></i></div>
+          <div class="fab"><i class="fa-brands fa-youtube"></i></div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="js/documentHelpers.js"></script>
+  </body>
+</html>

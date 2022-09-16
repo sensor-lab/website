@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/992df593b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis&display=swap"
+      rel="stylesheet"
+    />
+    <title>传感器实验室</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header-inner">
+      <div class="container">
+        <nav id="main-nav">
+          <img
+            src="img/creative_dark_transparent.png"
+            alt="sensor-lab"
+            id="logo"
+          />
+          <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="experiments.html" class="current">实验</a></li>
+            <li tabindex="0">
+              <a>平台</a>
+              <ul class="submenu">
+                <li><a href="ethernet_platform.html">以太网平台</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">联系</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="demos-main" class="py-2">
+      <div class="container">
+        <div class="demos-container">
+          <a href="demos/demo.html?demo=webpage_piano">
+            <article class="card bg-dark">
+              <div>
+                <img src="img/webpage_piano_demo/webpage_piano.png" alt="" />
+              </div>
+              <div>
+                <h3>网页钢琴</h3>
+                <div class="sensor-category">蜂鸣器</div>
+              <p>用户通过网站远程控制蜂鸣器频率，弹奏音乐。</p>
+              </div>
+            </article>
+          </a>
+
+          <a href="demos/demo.html?demo=watering_system">
+            <article class="card bg-dark">
+              <div>
+                <img src="img/watering_system_demo/自动浇花系统2.png" alt="" />
+              </div>
+              <div>
+                <h3>自动浇花系统</h3>
+                <div class="sensor-category">温度湿度传感器</div>
+                <div class="sensor-category">水泵</div>
+                <p>
+                  用户访问平台的网站端读取温度和湿度数据，并控制水泵按时给植物浇水。
+                </p>
+              </div>
+            </article>
+          </a>
+
+          <a href="demos/demo.html?demo=adc_microphone">
+            <article class="card bg-dark">
+              <div>
+                <img src="img/adc_microphone/waveform_and_fft.png" alt="" />
+              </div>
+              <div>
+                <h3>声音录制和分析系统</h3>
+                <div class="sensor-category">麦克风</div>
+                <p>平台连接麦克风录制声音，并分析声音信号获得频率信息。</p>
+              </div>
+            </article>
+          </a>
+
+          <a href="demos/demo.html?demo=led_strip_control">
+            <article class="card bg-dark">
+              <div>
+                <img src="img/led_strip_control/灯带控制器.png" alt="" />
+              </div>
+              <div>
+                <h3>灯带控制器</h3>
+                <div class="sensor-category">LED灯颜色控制</div>
+                <p>通过嵌入式平台高级输出功能，控制WS2811灯带。</p>
+              </div>
+            </article>
+          </a>
+
+          <a href="demos/demo.html?demo=points_counter">
+            <article class="card bg-dark">
+              <div>
+                <img src="img/point_counter/score_counter_board.jpg" alt="" />
+              </div>
+              <div>
+                <h3>比赛计分系统</h3>
+                <div class="sensor-category">段数码管</div>
+                <p>嵌入式平台控制分数显示板，控制比赛分数并向选手显示。</p>
+              </div>
+            </article>
+          </a>
+
+            <h3>
+
+
+
+              </a>
+            </h3>
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+      <div class="footer-content container">
+        <p>Copyright &copy; 2022. All Rights Reserved</p>
+        <div class="social">
+          <div class="fab"><i class="fa-brands fa-bilibili"></i></div>
+          <div class="fab"><i class="fa-brands fa-youtube"></i></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

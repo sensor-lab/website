@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/992df593b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis&display=swap"
+      rel="stylesheet"
+    />
+    <title>传感器实验室</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header-inner">
+      <div class="container">
+        <nav id="main-nav">
+          <img
+            src="img/creative_dark_transparent.png"
+            alt="sensor-lab"
+            id="logo"
+          />
+          <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="experiments.html">实验</a></li>
+            <li>
+              <a>平台</a>
+              <ul class="submenu">
+                <li><a href="ethernet_platform.html">以太网平台</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html" class="current">联系</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="contact-a" class="text-center py-3">
+      <div class="container">
+        <h3 class="section-title">联系我们</h3>
+        <div class="bottom-line"></div>
+
+        <form method="POST" data-netlify-recaptcha="true" data-netlify="true">
+          <div class="text-fields">
+            <input
+              type="text"
+              class="text-input subject-input"
+              placeholder="主题"
+              name="subject"
+            />
+            <input
+              type="text"
+              class="text-input name-input"
+              placeholder="姓名"
+              name="name"
+            />
+            <input
+              type="text"
+              class="text-input phone-input"
+              placeholder="联系方式（请注明电话/邮箱/微信等）"
+              name="phone"
+            />
+            <textarea
+              class="text-input message-input"
+              placeholder="留言内容"
+              name="message"
+            ></textarea>
+            <div class="my-2">
+              <div data-netlify-recaptcha="true"></div>
+            </div>
+          </div>
+          <button class="btn-dark" type="submit">提交</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Seciton B: Contact Info -->
+    <section id="contact-b" class="py-3 bg-dark">
+      <div class="container">
+        <div class="contact-info">
+          <div>
+            <i class="fa-brands fa-bilibili fa-2x"></i>
+            <h3>Bilibili</h3>
+            <p>传感器实验室</p>
+          </div>
+          <div>
+            <i class="fa-brands fa-youtube fa-2x"></i>
+            <h3>Youtube</h3>
+            <p>传感器实验室</p>
+          </div>
+          <!--<div>
+            <i class="fa-regular fa-envelope fa-2x"></i>
+            <h3>邮箱</h3>
+            <p>sensorlab.io@gmail.com</p>
+          </div>-->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section C: Tagline -->
+    <section id="contact-c" class="bg-main py-4">
+      <div class="container text-center">
+        <h3>期待您的建议和意见！</h3>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+      <div class="footer-content container">
+        <p>Copyright &copy; 2022. All Rights Reserved</p>
+        <div class="social">
+          <div class="fab"><i class="fa-brands fa-bilibili"></i></div>
+          <div class="fab"><i class="fa-brands fa-youtube"></i></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
