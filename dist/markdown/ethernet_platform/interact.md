@@ -1,12 +1,16 @@
 # 运行框图
+
 <img style="max-width: 750px; height: auto; " src="img/Structure.png"/>
 <br>
 
 <p>上图描述了锐客创新嵌入式平台的典型应用。用户从以太网或SD卡输入指令，开发板根据指令会发送硬件操作命令给执行器，比如开启电机转动。当执行器完成任务后，开发板发送硬件操作命令给传感器，收集传感器的数据。最后返回结果。</p>
 
 # 通过以太网与系统交互
+
 ## 连接
+
 用户可以根据使用场景将平台接入网络，以下是推荐的两种连接方式：
+
 <ol>
 <li>
 <p>将硬件平台接入路由器网络，计算机即可通过路由器访问硬件平台。</p>
@@ -25,6 +29,7 @@
 </blockquote>
 
 ## 通信
+
 <p>当硬件平台接入网络后，用户即可以和平台进行通信。客户端通过HTTP请求可以实现和硬件平台的交互，支持以下两种HTTP请求</p>
 <ol>
 <li>静态网站：用户可将前端页面存在SD卡上的<b>public</b>文件夹。当通过浏览器访问硬件平台时，平台会自动加载<b>public</b>文件夹中的<b>index.html</b>文件，继而可以向用户展示前端页面。</li>
@@ -75,7 +80,8 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 {"event":"now","result":[[1]]}
 ```
 
-# SD卡与系统交互
+# SD 卡与系统交互
+
 <p>除了通过串口连接线和以太网，用户还可以通过SD卡和系统进行交互。</p>
 <p>用户可将系统配置文件，硬件操作文件存在SD卡上，这些文件同样可以改变硬件平台的行为。</p>
 <blockquote>
@@ -90,7 +96,8 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 <li>firmware：该文件夹保存系统的固件，如果我们发布了新的固件版本且用户希望升级固件，用户可自行下载固件，然后将固件命名为<b>firmware.hex</b>并保存在该文件夹中。当下次系统上电后，系统会检测到新的固件文件，并做系统升级。</li>
 </ol>
 
-## boot.json文件
+## boot.json 文件
+
 <p>boot.json保存在<b>user</b>文件夹中，内容和以太网HTTP的硬件操作命令一样，采用JSON格式。当系统上电后，会自动读取该文件，按照文件的内容做出相应的硬件操作。</p>
 <p>例如，将以下内容保存到boot.json文件中，当系统上电后，会每5秒钟读取ADC的采样，然后通过UDP发送给IP地址192.168.1.105的5000端口。</p>
 
@@ -115,6 +122,7 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 <br>
 
 ## 硬件操作
+
 <p>嵌入式平台支持对GPIO，ADC，SPI，I2C，UART，PWM，时钟模块，文件系统的硬件操作。</p>
 <p>硬件操作保存在JSON格式中，用户通过HTTP的POST请求发送给平台，或通过保存在user/boot.json文件中。</p>
 
@@ -137,6 +145,7 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 <a href="download/锐客创新硬件操作命令.pdf" download="锐客创新硬件操作命令.pdf">下载：【硬件操作命令集】</a>
 
 ## 事件处理
+
 <p>硬件平台的事件处理机制帮助用户选择在特定条件下触发硬件操作。</p>
 <ul>
 <li>当事件类型为"now"时，平台接受到请求时会立即执行里面的硬件命令。</li>
@@ -144,7 +153,8 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 <li>当事件类型为"pinstate"时，平台接受到请求时会配置相应的管脚，只有当管教电平满足条件时，才会出发硬件命令。</li>
 </ul>
 
-##### now事件：
+##### now 事件：
+
 <p>该事件会即刻发送，发送包里的硬件操作会即可进行执行。格式如下：</p>
 
 <pre>
@@ -166,7 +176,8 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 }
 </pre>
 
-##### schedule事件
+##### schedule 事件
+
 <p>该事件定义事件发生时间要求，当系统检测到满足时间要求时，硬件事件会被自动触发</p>
 
 <pre>
@@ -199,7 +210,8 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 <p>如果用户只制定了结束时间，则硬件操作会立即以间隔被不停地触发直到结束时间。</p>
 </blockquote>
 
-##### pinstate事件
+##### pinstate 事件
+
 <p>该事件定义当指定引脚的电压发生改变时，则硬件操作会被触发。</p>
 <p>改变包括上升沿，下降沿或任何电压改变。格式如下：</p>
 
@@ -218,7 +230,7 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 例如，在26上升沿时，反转管脚10的电压:
 {
   "event": "pinstate",
-  "pin": "26",
+  "pin": 26,
   "trigger": "rising",
   "actions": [["gpio",10,"output",2]]
 }
@@ -231,6 +243,7 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 <p>目前支持如下三种返回类型：</p>
 
 ##### tcp
+
 <p>指定一个IP地址，当硬件操作结束后，结果会通过TCP发送到该IP地址</p>
 
 ```
@@ -248,8 +261,8 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 
 ```
 
-
 ##### udp
+
 <p>指定一个IP地址，当硬件操作结束后，结果会通过UDP发送到该IP地址</p>
 
 ```
@@ -268,6 +281,7 @@ curl --location --request POST '192.168.1.107/hardware/operation' \
 ```
 
 ##### 文件
+
 <p>指定一个文件名，当硬件操作结束后，结果会保存到该文件中。</p>
 
 <blockquote>
