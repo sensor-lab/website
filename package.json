@@ -166,7 +166,7 @@
     "promise-inflight": "^1.0.1",
     "safe-buffer": "^5.2.1",
     "sass-graph": "^4.0.0",
-    "scss-tokenizer": "^0.3.0",
+    "scss-tokenizer": ">=0.4.3",
     "semver": "^7.3.7",
     "set-blocking": "^2.0.0",
     "shebang-command": "^2.0.0",
